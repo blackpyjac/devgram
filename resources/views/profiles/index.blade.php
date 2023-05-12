@@ -4,15 +4,24 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="https://cdn.sanity.io/images/6jm1ps9z/production/1cd56065ba41bd6130ba1d716cdaca734c78b07f-1080x1080.png"
-                alt="" style="height: 140px;" class="rounded-circle">
+            <!-- https://cdn.sanity.io/images/6jm1ps9z/production/1cd56065ba41bd6130ba1d716cdaca734c78b07f-1080x1080.png -->
+            <img src="{{ $user->profile->profileImage() }}"
+                alt="" style="height: 140px;" class="rounded-circle w-100">
         </div>
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-baseline">
-                <h1>{{ $user->username }}</h1>
+                <div class="d-flex align-items-center pb-3">
+                    <div class="h4">{{ $user->username }}</div>
+                    <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}" ></follow-button>
+                </div>
+                
+                @can('update', $user->profile)
                 <a href="/p/create">Add new post</a>
+                @endcan
             </div>
+            @can('update', $user->profile)
             <a href="/profile/{{$user->id}}/edit">Edit profile</a>
+            @endcan
             <div class="d-flex">
                 <div class="pe-5"><strong>{{ $user->posts->count() }}</strong> post</div>
                 <div class="pe-5"><strong>133</strong> followers</div>
