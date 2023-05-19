@@ -1,8 +1,23 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,700;1,700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css');
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.divider {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ced4da;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+  }
+  
+  .divider span {
+    background: #fff;
+    padding: 0 10px;
+  }
