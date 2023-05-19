@@ -30,7 +30,7 @@ class PostsController extends Controller
         $data=request()->validate([
             /* 'another_field'=>'', */
             'caption'=>'required',
-            'image'=>'required|image'
+            'image'=>['required','image']
         ]);
         $imagePath=request('image')->store('uploads', 'public');
         $image=Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
@@ -43,7 +43,7 @@ class PostsController extends Controller
        // dd(request()->all());
        return redirect('/profile/'.auth()->user()->id);
     }
-    public function show(\App\Models\Post $post)
+    public function show(Post $post)
     {
         //compact('post') is the same that ['post'=>$post]
         return view('posts.show', compact('post'));

@@ -5,13 +5,10 @@
     <div class="row justify-content-center mt-5">
         <div class="col-md-5 mb-2">
             <div class="card">
-                <div class="card-body mb-5">
+                <div class="card-body">
                     <div class="row mt-5 mb-4 justify-content-center">
                         <img src="/img/logo.png" style="width: 85px;" alt="">
-                        <div class="text-center mt-2 fs-2" style="font-family: 'Lobster', cursive;">{{ env('APP_NAME') }}</div>
-                        <div class="col-md-9 text-center mt-2 fs-6 fw-bold text-muted" >
-                            Sign up to see photos and videos from your dev-friends.
-                        </div>
+                        <div class="text-center mt-2 fs-3 fw-bold">{{ env('APP_NAME') }}</div>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -63,29 +60,14 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0 justify-content-center">
-                            <div class="col-md-9 d-grid gap-2">
-                                <button type="submit" class="btn btn-primary fw-bold">
+                        <div class="row mb-0">
+                            <div class="col-md-10 d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card text-center">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Have an account?<a class="btn btn-link text-decoration-none fw-bold"
-                                    href="{{ route('login') }}">{{ __('Log in') }}</a></p>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
